@@ -1,0 +1,65 @@
+1.
+
+/*greet*/
+
+function greet (name, owner) {
+return (name === owner) ? 'Hello boss' : 'Hello guest';
+
+}
+
+
+2. /* Sum without highest and lowest number*/
+
+function sumArray(array) {
+if(array !== null){
+if(array.length > 1){
+var sum = 0;
+var max = Math.max(...array);
+var min = Math.min(...array);
+array.map(function(e){
+sum += e;
+});
+sum -= (max + min);
+return sum;
+}
+}
+return 0;
+
+}
+
+
+3. /* Count the Monkeys!*/
+
+function monkeyCount(n) {
+   var result =[];
+   for (var i = 1; i <= n; i++) {
+      result.push(i)
+   }
+   return result;
+}
+
+
+4./*Convert an array of strings to array of numbers*/
+
+function toNumberArray(stringarray){
+  return [...stringarray].map(e => Number(e));
+
+}
+
+
+5./*Find Maximum and Minimum Values of a List*/
+
+var min = function(list){
+    return Math.min.apply(null,list);
+}
+
+var max = function(list){
+    return Math.max.apply(null,list);
+}
+
+
+
+
+
+
+

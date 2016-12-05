@@ -1,0 +1,62 @@
+1.  /* sum function */
+var sum = function(x, y) {
+   return (x>=0 && y>=0) ? (x + y) : function(y) { return x + y; };
+}
+
+2./* Deletion in an array */
+function deleteValues(array, pred) {
+  for(var i = 0; i < array.length; i++) {
+    if ( pred(array[i]) ) {
+      array.splice(i--, 1);
+    }
+  }
+  return array;
+}
+
+3./* Summing a number's digits  */
+
+function sumDigits(number) {
+var sum = 0;
+[...(number.toString())].map(e =>  Number(e) ? sum += Number(e) : ' ');
+return sum;
+}
+
+4. /*palindromeChainLength*/
+
+var palindromeChainLength = function(n) {
+   var str =  n.toString();
+   var i = 0;
+   var reverse1 = Number(str.split('').reverse().join(''));
+   var count = 0;
+   var no = Number(str);
+   
+   if(no === reverse1){
+   return count;
+   }
+   else{
+   while(no !== reverse1)
+   {   
+       no = reverse1 + no;
+       var num1 = no.toString();
+       reverse1 = Number(num1.split('').reverse().join(''));
+       count++;
+   }
+   return count;
+   }
+
+
+5./*Polish alphabet*/
+
+function correctPolishLetters (string) {
+ return string.replace(/[ąćęłńóśźż]/g, (word) => ({
+ą: 'a',
+ć: 'c',
+ę: 'e',
+ł: 'l',
+ń: 'n',
+ó: 'o',
+ś: 's',
+ź: 'z',
+ż: 'z',
+  })[word]);
+}

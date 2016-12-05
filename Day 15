@@ -1,0 +1,69 @@
+1./* Swap Values */
+
+function swapValues() {
+    var args = Array.prototype.slice.call(arguments);
+    var temp = args[0][0];
+    args[0][0] = args[0][1];
+    args[0][1] = temp;
+}
+
+2. /* arrayMadness */
+
+function arrayMadness(a, b) {
+   return a.map(e => Math.pow(e,2)).reduce((a,b) => a+b) > b.map(e => Math.pow(e,3)).reduce((a,b) => a+b) ? true : false;
+}
+
+3. /* Blood-Alcohol Content */
+
+function bloodAlcoholContent(drinks, weight, sex, time){
+  return parseFloat(((drinks.ounces * drinks.abv * 5.14 / weight * (sex == 'male' ? 0.73 : 0.66)) - 0.015 * time).toFixed(4));
+}
+
+4./* Initialize my name */
+
+function initializeNames(name){
+  var results = '';
+  var parts = name.split(' ');
+  if(parts.length  === 1){
+  return name;
+  }
+  else{
+  var first = parts.shift();
+  var last = parts.pop();
+   result = first + ' ';
+  if(parts.length > 0){
+  parts.map(function(e){
+   result += [...e][0]+ '.' + ' ';
+  });
+  }
+  result += last;
+ 
+ return result;
+ }
+}
+
+5./* Reversing Words in a String */
+
+function reverse(string){
+var result =  (string.split("").reverse().join("")).split(" ");
+var result1 = [];
+ result.map(function(e){
+ result1.push(e.split("").reverse().join(""));
+});
+return result1.join(" ");
+}
+
+or
+
+
+function reverse(string){
+
+return ((string.split("").reverse().join("")).split(" ").map(e => (e.split("").reverse().join("")))).join(" ");
+ 
+}
+
+
+
+
+
+

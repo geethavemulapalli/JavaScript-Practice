@@ -1,0 +1,49 @@
+1. /* Sort Numbers */
+
+function solution(nums){
+
+return (nums) ?  nums.sort(function(a, b){return a-b}) : [];
+
+}
+
+
+2./* Reversed Words */
+
+function reverseWords(str){
+  return str.split(" ").reverse().join(" "); // reverse those words
+}
+
+3./* Two Sum */
+
+function twoSum(numbers, target) {
+
+var i = 0;
+var j = numbers.length -1;
+
+while(i <= j){
+  if(numbers[i] + numbers[j] === target){
+   return [i,j];
+  }
+  else if(numbers[i] + numbers[j] > target){
+   j--;
+  }
+  else{
+  i++;
+  } 
+}
+}
+
+
+4. /* Short Long Short */
+
+function solution(a, b){
+ return  (a.length > b.length) ? b + a + b : a + b + a;
+}
+
+
+5./* 2 + 2 * 2 problem  */
+
+function calculate(){
+  return (2 + 2) * 2;
+}
+

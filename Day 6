@@ -1,0 +1,89 @@
+1./*T.T.T.#5: Only you  */
+function onlyYou(s){
+  s=s.toLowerCase();
+  return /y.*o.*u/.test(s) && ["i","me","he","him","they","them","we"].every(x=>s.search(x)<0);
+}
+
+2./* Numbers with this digit inside */
+
+const numbersWithDigitInside = (x, d) => {
+  let nums = []
+  for (i=1; i<=x; i++) {
+    if (String(i).match(new RegExp(d))) nums.push(i)
+  }
+  let count = nums.length
+  if (count==0) return [0,0,0]
+  let sum = nums.reduce((a,b) => a+b)
+  let product = nums.reduce((a,b) => a*b)
+  return [count, sum, product]
+}
+
+3./*Looking for a benefactor*/
+
+var newAvg = (arr, newavg) => {
+  if ((arr.reduce((a,b)=>a+b,0) / arr.length) > newavg) {
+    throw Error();
+  } else {
+    return Math.ceil(newavg * (arr.length+1) - arr.reduce((a,b)=>a+b,0));
+  }
+}
+
+4./* Basic Mathematical Operations */
+
+function basicOp(operation, value1, value2)
+{
+  switch(operation){
+  
+  case '+' : return (value1 + value2);
+             break;
+  case '-' : return (value1 - value2);
+             break;
+  case '*' : return (value1 * value2);
+             break;
+  case '/' : return (value1 / value2);
+             break;
+  
+  }
+ }
+
+
+
+5./* Number encrypting: cypher*/
+
+function cypher(string) {
+  var myMap = new Map();
+  myMap.set('I',1);
+  myMap.set('l',1);
+   myMap.set('R',2);
+    myMap.set('z',2);
+    myMap.set('E',3);
+    myMap.set('e',3);
+    myMap.set('A',4);
+    myMap.set('a',4);
+      myMap.set('S',5);
+      myMap.set('s',5);
+      myMap.set('G',6);
+      myMap.set('b',6);
+       myMap.set('T',7);
+       myMap.set('t',7);
+        myMap.set('B',8);
+         myMap.set('g',9);
+          myMap.set('o',0);
+           myMap.set('O',0);
+           var news='';
+           [...string].map(function(e){
+           if(myMap.has(e)){
+           news +=myMap.get(e);
+           }
+           else{
+           news += e;
+           }
+           
+           });
+      return news;     
+           
+}
+
+
+
+

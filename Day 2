@@ -1,0 +1,143 @@
+1. /* Longest of 2 strings */
+
+function longest(s1, s2) {
+  var result = '';
+  var temp = [];
+  for(var i = 0; i < s1.length; i++){
+  var s =s1.charAt(i);
+    if(temp.indexOf(s) === -1){
+     temp.push(s);
+    }
+  }
+  for(var j = 0; j < s2.length; j++){
+   var s =s2.charAt(j);
+    if(temp.indexOf(s) === -1){
+      temp.push(s);
+     }
+  }
+  temp.sort();
+  result = temp.join("");
+ return result;
+
+}
+
+
+
+
+2. /* diamond shape */
+
+function diamond(n){
+var diam = '';
+var k = 0;
+var j = 0;
+var temp = [];
+var spaces = 0;
+  if(n%2 !== 0 && n > 0){
+  for(var i = 1; i <= n; i++){
+  if(i%2 !== 0){
+    temp.push(i);
+     }
+  }
+  for(var i = 0; i < temp.length; i ++){
+  if(temp[i] < n){
+    k = 0;
+    spaces = n - temp[i];
+     while(k < spaces/2){
+        diam +=' ';
+        k++;
+     }
+    k = 0;
+    while(k < temp[i]){
+        diam +='*';
+        k++;
+    }
+    diam +='\n';
+   }
+  else if(temp[i] === n){
+    k = 0;
+    while(k < n){
+      diam +='*';
+      k++;
+    }
+    diam +='\n';
+  }
+}
+for(var i = temp.length; i >= 0; i--){
+  if(temp[i] < n){
+    k = 0;
+    spaces = n - temp[i];
+    while(k < spaces/2){
+      diam +=' ';
+      k++;
+    }
+    k = 0;
+    while(k < temp[i]){
+      diam +='*';
+      k++;
+    }
+   diam +='\n';
+  }
+}
+  return diam;
+  }
+
+   return null;
+}
+
+
+3. /*Second largest in array */
+
+function secondLargest(array){
+  var result = new Set();
+  if(Array.isArray(array)){
+  array.forEach(function (elem) {
+    if(!isNaN(Number(elem)) && elem !== false && elem !== null && elem !== true){
+     result.add(Number(elem));
+    }
+});
+
+var temp = [...result];
+temp = temp.sort(function (a, b) {  return a - b;  });
+return temp[temp.length - 2];
+  }
+
+}
+
+
+4. /* Highest and Lowest */
+
+function highAndLow(numbers){
+var result = numbers.split(" ");
+var temp = [];
+for(var i of result){
+   temp.push(Number(i));
+}
+temp = temp.sort(function (a, b) {  return a - b;  });
+var final = temp[temp.length-1]+ " " + temp[0];
+return final;
+}
+
+
+5. /*order*/
+
+function order(words){
+let m = new Map();
+var string = '';
+if(words.length > 0){
+var result = words.split(' ');
+for(var i of result){
+ var noarray = [...i].map(Number);
+ noarray.forEach(function(elem){
+   if(!isNaN(elem)){
+     var no = elem;
+     m.set(no,i);
+   }
+ });
+}
+ var i = [...m.keys()].sort();
+ i.forEach(function(e){
+    string += m.get(e) + " ";
+ });
+ }
+ return string.trim();
+}

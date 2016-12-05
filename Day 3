@@ -1,0 +1,65 @@
+1. /*Opposite Number*/
+function opposite(number) {
+  return(-number);
+}
+
+2. /*is string uppercase */
+String.prototype.isUpperCase = function (){
+var bool;
+if(this[0] !== ' '){
+[...this].map(function(ele){
+  if(ele !== ele.toUpperCase()){
+     bool = false;
+   }
+});
+return (bool === false) ? false : true;
+}
+};
+
+
+3. /*you are a square */
+var isSquare = function(n){
+  return n >= 0 && Number.isInteger(Math.sqrt(n));
+}
+
+4. /*Exes and Ohs*/
+function XO(str) {
+ var x = 0;
+ var o = 0;
+    var arr = [...str.toLowerCase()].map(function(elem){
+     if(elem === 'x'){
+       x++;
+     }
+     if(elem === 'o'){
+      o++;
+     }
+    });
+    return (x === o) ? true : false;
+}
+
+
+5. /* NameScore */
+
+function nameScore(name){
+ 
+  var score = 0;
+  var result = {};
+  [...name.toUpperCase()].map(function(n){
+    for( var i in alpha){
+       [...i].map(function(e){
+        if(n === e){
+           score += alpha[i];
+         }
+       });
+     }
+  });
+  result[name] = score;
+  return result;
+}
+
+
+
+
+
+
+

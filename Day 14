@@ -1,0 +1,51 @@
+1./* betterThanAverage */
+
+function betterThanAverage(classPoints, yourPoints) {
+  classPoints.push(yourPoints);
+  return (((classPoints.reduce((a,b) => a + b))/classPoints.length) < yourPoints);
+}
+
+
+2./* Sum of positive */
+
+function positiveSum(arr) {
+  var sum = 0;
+  arr.map(e => (e>0) ? sum += e :'');
+  return sum;
+}
+
+
+
+3./* Removing Elements*/
+
+function removeEveryOther(arr){
+  var len = arr.length;
+  var res = [];
+  for(var i = 0; i < len; i += 2){
+   res.push(arr[i]);
+    
+  }
+  return res;
+ 
+}
+
+4./*sayHello*/
+
+function sayHello(name) {
+  return `Hello, ${name}`;
+}
+
+
+5./* Fuel economy converter (mpg <-> L/100 km) */
+
+function mpg2lp100km(x){
+  return( Number(  ((((3.785411784)/ (1.609344)) * 100)/x).toFixed(2)));
+}
+
+function lp100km2mpg(x){
+  return( Number(  (( 100 *3.785411784)/ (1.609344 * x)).toFixed(2)));
+}
+
+
+
+

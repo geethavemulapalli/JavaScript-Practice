@@ -1,0 +1,44 @@
+1./*Find the Difference in Age between Oldest and Youngest Family Members */
+
+function differenceInAges(ages){
+return [ Math.min.apply(null,ages),
+         Math.max.apply(null,ages),
+        (Math.max.apply(null,ages) - Math.min.apply(null,ages))
+       ];
+}
+
+
+
+
+2./* Rotate Array (JS) */
+
+function rotate(array, n) {
+  n = n % array.length
+  return array.slice(-n).concat(array.slice(0, -n))
+}
+
+
+3./* Weird words */
+
+function nextLetter(str) {
+  var alphabet = "abcdefghijklmnopqrstuvwxyzaABCDEFGHIJKLMNOPQRSTUVWXYZA";
+  return str.split('').map(c => alphabet.includes(c) ? alphabet[alphabet.indexOf(c)+1] : c).join('');
+}
+
+
+
+4./* Compare within margin */
+
+function closeCompare(a, b, margin){ 
+return  (Math.abs(a-b) <= margin) ? 0 : Math.sign(a-b);
+}
+
+
+
+
+5./* Triangular Treasure */
+
+function triangular( n ) {
+  return (n <= 0) ? 0 : n*(n+1)/2;
+}
+

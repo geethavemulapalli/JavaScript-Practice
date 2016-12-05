@@ -1,0 +1,83 @@
+1./* Another one down—the Survival of the Fittest! */
+
+function removeSmallest(n, arr) {
+  let res = arr.slice(0);
+  while( n-- > 0 ) res.splice(res.indexOf( Math.min(...res) ),1);
+  return res;
+}
+
+2. /* Reversed Strings */
+
+function solution(str){
+return  [...str].reverse().join('');
+}
+
+3./* Fun with ES6 Classes #2 - Animals and Inheritance  */
+
+// Get Coding :)
+
+class Shark extends Animal {
+  constructor(name, age, status) {
+    super(name,age,0, "shark",status);
+  }
+}
+
+class Cat extends Animal {
+constructor(name, age, status) {
+    super(name,age,4,"cat",status);
+  }
+introduce(){
+  return `Hello, my name is ${this.name} and I am ${this.age} years old.  Meow meow!`;
+}
+}
+
+
+class Dog extends Animal {
+constructor(name, age, status,master) {
+    super(name,age,4,"dog",status);
+    this.master = master;
+  }
+
+greetMaster(){
+    return `Hello ${this.master}`;
+}
+
+
+
+
+4./* SpeedCode #1 - Getters and Setters in Object Literals */
+
+const person = {
+  firstName: 'Jane',
+  lastName: 'Doe',
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  set fullName(name) {
+    [this.firstName, this.lastName] = name.split(' ');
+  }
+};
+
+
+
+5./*  Sir , showMe yourID   */
+
+function showMe(yourID){
+if(yourID.split(' ')){
+ return false;
+}
+else{
+return true;
+  
+}
+}
+
+
+
+
+
+
+
+
+
+

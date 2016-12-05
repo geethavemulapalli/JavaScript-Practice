@@ -1,0 +1,134 @@
+1. /*Open or Senior */
+function openOrSenior(data){
+  var result = [];
+  for(var i of data){
+    var v = (i[0] >= 55 && i[1] > 7) ? "Senior" : "Open";
+    result.push(v);
+  }
+  return result;
+}
+
+
+2. /*pipeFix*/
+function pipeFix(numbers){
+ var result = [];
+ for(var i = numbers[0]; i <= numbers[numbers.length -1]; i++){
+    result.push(i);
+ }
+ return result;
+}
+
+3./*firstNonRepeatingLetter*/
+
+function firstNonRepeatingLetter(l) {
+var s = l.toLowerCase();
+  var m = new Map();
+  if(s.length > 0){
+    [...s].map(function(ele){
+     if(m.has(ele)){
+        var v =  m.get(ele);
+        v++;
+        m.set(ele, v);
+     }
+     else{
+        m.set(ele, 1);
+     }
+ 
+    });
+ 
+    for (var entry of m.entries()) {
+        if(entry[1] === 1){
+           if(l.includes(entry[0])){
+             return entry[0];
+           } 
+           else if(l.includes(entry[0].toUpperCase())){
+            return entry[0].toUpperCase();
+           }
+        }
+     }
+   }
+ 
+ return'';
+ 
+}
+
+
+4./*every*/
+
+function every(arr, interval, start){
+ var t = [];
+ if(!interval && !start){
+    return arr;
+ }
+ else if(!start){
+  
+   for(var i = 0; i < arr.length; i += interval){
+     t.push(arr[i]);
+    
+   }
+ 
+ }
+ else{
+ 
+   for(var i = 0 ; i < arr.length; i += interval){
+       if(i + start < arr.length){
+          t.push(arr[i + start]);
+        }
+   } 
+  
+ }
+   return t;
+}
+
+
+
+
+5./*  bonusTime   */
+
+function bonusTime(salary, bonus) {
+  return (bonus)? '£' + (salary*10) : '£' +salary;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

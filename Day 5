@@ -1,0 +1,58 @@
+1. /* Sum of two lowest integers*/
+
+function sumTwoSmallestNumbers(numbers) {
+
+ var res =  numbers.sort(function (a, b) {  return a - b;  });
+ return res[0] + res[1];
+
+};
+
+
+2. /* Powers of 2*/
+
+function powersOfTwo(n){
+  if(n > 0){
+    var res=[];
+    for(var i = 0; i <= n; i++){
+     res.push(Math.pow(2,i));
+    }
+    return res;
+  }
+  else{
+    return [1];
+  }
+}
+
+
+3. /*Are the numbers in order?*/
+
+function inAscOrder(arr) {
+  for (let i=1; i<arr.length; ++i)
+    if (arr[i] < arr[i-1]) return false;
+
+  return true;
+}
+
+
+4./*Evil or Odious*/
+
+function evil(n) {
+
+ return ((n.toString(2).split(1).length - 1)%2 === 0)? "It's Evil!" : "It's Odious!";
+
+}
+
+
+5. /*Two fighters, one winner*/
+
+function declareWinner(fighter1, fighter2, firstAttacker) {
+  var fac1 = Math.ceil( fighter1.health / fighter2.damagePerAttack );
+  var fac2 = Math.ceil( fighter2.health / fighter1.damagePerAttack );
+  if(fac1 < fac2) {
+    return fighter2.name;
+  } else if(fac2 < fac1) {
+    return fighter1.name;
+  } else {
+    return firstAttacker;
+  }
+}

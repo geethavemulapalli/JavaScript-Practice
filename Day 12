@@ -1,0 +1,95 @@
+1. /* Sum consecutives */
+
+function sumConsecutives(s) {
+  var result =[];
+  var sum = 0;
+
+
+ for(var i = 0; i < s.length; i++){
+ if(s[i] === s[i+1]){
+     while(s[i] === s[i+1]){
+     sum += s[i];
+     i++;
+     }
+     sum += s[i];
+     result.push(sum);
+     sum = 0;
+     }
+     else{
+     result.push(s[i]);
+    }
+ }
+ return result;
+
+}
+
+2. /* Next Palindromic Number  */
+
+
+function nextPal(val) {
+
+    var no = val;
+    var reverse = 0;
+    while(no !== reverse){
+        no++;
+     reverse = Number(no.toString().split('').reverse().join(''));
+    }
+    return no;
+ }
+
+
+3./ *Vault experience (1): Enough water for how many days?*/
+
+function thirstyIn(water, ageOfDwellerArray) {
+  var count1 = 0;
+  var count2 = 0;
+  if(ageOfDwellerArray.length >= 1){
+  ageOfDwellerArray.map(function(e){
+
+     if(e < 18){
+       count1++;
+     }
+     else if(e > 50){
+       count2++;
+     }
+
+
+  });
+var count3 =   ageOfDwellerArray.length - (count1 + count2);
+
+var perday = (count1*1) + (count2*1.5) + (count3*2);
+
+var noofdays = Math.trunc(water/perday);
+
+return noofdays;
+}
+else{
+return -1;
+}
+
+}
+
+
+4. /*What's the real floor?  */
+
+
+function getRealFloor(n) {
+return (n <= 0) ?  n : ((n< 13) ? n-1 : n-2);
+}
+
+
+5./* Are they opposite? */
+
+
+function isOpposite(s1,s2){
+
+  if((s1.length == 0 && s2.length == 0) || (s1.length !== s2.length) || (s1.toLowerCase() !== s2.toLowerCase())){
+   return false;
+  }
+
+    for(var i = 0;i < s1.length; i ++){
+    if(((s1[i].toUpperCase() === s1[i]) && (s1[i] === s2[i])) || ((s1[i].toLowerCase() === s1[i]) && (s1[i] === s2[i]))){
+       return false;
+    }
+
+    }

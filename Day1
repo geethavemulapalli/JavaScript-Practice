@@ -1,0 +1,66 @@
+Javascript Practice Problems
+
+/* Multiples of 3 and 5 */
+
+var sum = 0;
+for (var i = 0; i < 1000; i++) {
+  if (i % 3 === 0 || i % 5 === 0) {
+    sum += i;
+  }
+}
+
+
+/*Even Fibonacci numbers*/
+
+var f1 = 0;
+var f2 = 1;
+var sum = 0;
+var next;
+
+   for(i = 1; i < 100; i++){
+        next = f1 + f2;
+        f1 = f2;
+        f2 = next;
+        if(f2 % 2 === 0 && f2 < 4000000) {
+            sum += current;
+
+        }
+   }
+
+/*Largest prime factor*/
+
+function Factors(no) {
+        var factors = [], i;
+        var result = [];
+        for (i = 2; i <= no; i++) {
+            while ((no % i) === 0) {
+                factors.push(i);
+                no /= i;
+            }
+        }
+        result = factors.reverse();
+        return result[0];
+    }
+
+
+/*Sum square difference*/
+
+var sumsquare = 0;
+var squaresum = 0;
+var sum = 0;
+var result;
+for(var i = 1; i<= 100; i++){
+   sumsquare += (i*i);
+}
+for(var i = 1; i<= 100; i++){
+  sum += i;
+}
+squaresum = sum * sum;
+result = squaresum - sumsquare;
+
+
+
+/* Reversing a string */
+function reverse(s) {
+  return s.split('').reverse().join('');
+}

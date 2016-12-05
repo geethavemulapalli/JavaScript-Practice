@@ -1,0 +1,24 @@
+1. beetleJuice
+
+function beetleJuice(name){
+  var newName = name + "  ";
+  return newName.repeat(3).trim();
+}
+
+2.
+
+
+
+
+3.
+
+
+
+
+4.
+
+
+
+
+
+5.

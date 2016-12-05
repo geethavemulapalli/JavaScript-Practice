@@ -1,0 +1,87 @@
+1. /* Pernicious Numbers  */
+
+function isPrime(num){
+  var prime = num != 1;
+    for(var i=2; i<num; i++) {
+        if(num % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+    return prime;
+ }
+
+function pernicious(n){
+ var sum = 0;
+  var result = [];
+  if(n > 1){
+  for(var i = 3; i <= n; i++){
+  [...(i.toString(2))].map(function(e){
+  sum += Number(e);
+   });
+
+    if(isPrime(sum)){
+     result.push(i);
+    }
+    sum = 0;
+    }
+    return result;
+  }
+   else{
+      return "No pernicious numbers";
+   }
+
+}
+
+
+2./*Palindrome Strings */
+
+function isPalindrome(line) {
+
+Number.isInteger(line) ? line = line.toString():'';
+
+return line === [...line].reverse().join('');
+}
+
+
+3./* Debug Sum of Digits of a Number */
+
+
+function getSumOfDigits(integer) {
+  var sum = 0;
+  var digits =  Math.floor(integer).toString();
+  for(var ix = 0; ix < digits.length; ix = ix+ 1) {
+ 
+    sum += Number(digits[ix]);
+  }
+  return sum;
+}
+
+
+4. /* Distance from the average */
+
+function distancesFromAverage(arr){
+ var avg = ([...arr].reduce((a,b) => a + b))/arr.length;
+ 
+ return  [...arr].map(e => Number((avg - e).toFixed(2)));
+ 
+}
+
+
+5./* Find The Parity Outlier */
+
+function findOutlier(integers){
+var count = 0;
+var count1 = 0;
+var result;
+  [...integers].map(e =>  (e%2 === 0) ?  count++ : count1++ );
+  
+  (count > 1) ?  [...integers].map(e => (e%2 !== 0) ? result = e : '') : [...integers].map(e => (e%2 === 0) ? result = e : ''); 
+  
+  return result;
+  
+}
+
+
+
+
